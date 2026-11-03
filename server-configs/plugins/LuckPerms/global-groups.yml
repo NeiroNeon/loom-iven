@@ -1,0 +1,99 @@
+# LuckPerms — группы Loom Iven (сид хранилища yaml).
+# Лестница активности: default[Новичок] → resident[Постоялец] → keeper[Хранитель] → legend[Легенда]
+# Донат-привилегии: sortannik[Соратник] → mecenat[Меценат] → patricij[Патриций] → fantom[Фантом]
+# Стафф-оверлеи: mentor[Ментор] events[Ивенты] moderator[Модер] admin[Админ] owner[Владелец]; техническая: bot
+bot:
+  name: bot
+  permissions:
+  - weight.5
+  - 'prefix.5.&8[&8Бот&8]&r '
+default:
+  name: default
+  permissions:
+  - weight.10
+  - 'prefix.10.&8[&7Новичок&8]&r '
+resident:
+  name: resident
+  permissions:
+  - weight.20
+  - group.default
+  - 'prefix.20.&8[&bПостоялец&8]&r '
+keeper:
+  name: keeper
+  permissions:
+  - weight.30
+  - group.resident
+  - 'prefix.30.&8[&6Хранитель&8]&r '
+legend:
+  name: legend
+  permissions:
+  - weight.40
+  - group.keeper
+  - 'prefix.40.&8[&dЛегенда&8]&r '
+sortannik:
+  name: sortannik
+  permissions:
+  - weight.45
+  - group.default
+  - 'prefix.45.&8[&2Соратник&8]&r '
+  - loomauction.maxlots.7
+  - loomauction.commission.4
+mecenat:
+  name: mecenat
+  permissions:
+  - weight.55
+  - group.sortannik
+  - 'prefix.55.&8[&3Меценат&8]&r '
+  - loomauction.maxlots.8
+  - loomauction.commission.3
+patricij:
+  name: patricij
+  permissions:
+  - weight.65
+  - group.mecenat
+  - 'prefix.65.&8[&9Патриций&8]&r '
+  - loomauction.maxlots.10
+  - loomauction.commission.2
+  - loomprogress.fund.preset10k
+  - loomprogress.keys.weekly
+fantom:
+  name: fantom
+  permissions:
+  - weight.75
+  - group.patricij
+  - 'prefix.75.&8[&5Фантом&8]&r '
+  - loomauction.maxlots.12
+  - loomauction.commission.1
+  - loomprogress.fund.preset10k
+  - loomprogress.keys.weekly
+mentor:
+  name: mentor
+  permissions:
+  - weight.90
+  - 'prefix.90.&8[&2Ментор&8]&r '
+events:
+  name: events
+  permissions:
+  - weight.100
+  - loom.admin
+  - 'prefix.100.&8[&5Ивенты&8]&r '
+moderator:
+  name: moderator
+  permissions:
+  - weight.110
+  - loom.admin
+  - 'prefix.110.&8[&9Модер&8]&r '
+admin:
+  name: admin
+  permissions:
+  - weight.120
+  - loom.admin
+  - 'prefix.120.&8[&cАдмин&8]&r '
+owner:
+  name: owner
+  permissions:
+  - weight.130
+  - group.admin
+  - loom.admin
+  - loom.owner
+  - 'prefix.130.&8[&4Владелец&8]&r '

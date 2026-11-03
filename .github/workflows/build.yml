@@ -1,0 +1,51 @@
+# Сборка 5 собственных плагинов Loom в CI.
+# Ручной запуск (Action → Build plugins → Run workflow). Триггер на push
+# отключён намеренно: пока сборка не обкатана на GitHub Actions.
+name: Build plugins
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 25
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+
+      # Кэш инструментов (JDK в tools/ + deps) — экономит ~2 минуты на запуск
+      - name: Cache toolchain
+        uses: actions/cache@v4
+        with:
+          path: |
+            tools/deps
+            tools/jdk25
+          key: loom-toolchain-${{ hashFiles('scripts/fetch_toolchain.sh') }}
+          restore-keys: loom-toolchain-
+
+      - name: Fetch toolchain (JDK 25 + deps)
+        run: bash scripts/fetch_toolchain.sh
+
+      - name: Fetch classpath jars (LuckPerms, PlaceholderAPI, Floodgate, ProtocolLib)
+        run: bash scripts/ci_deps.sh
+
+      - name: Build 5 plugins
+        run: bash scripts/build.sh
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: loom-plugins
+          path: |
+            loomplugin/_out/LoomCore.jar
+            loomplugin/_out/LoomPlaytimeRanks.jar
+            loomplugin/_out/LoomAuction.jar
+            loomplugin/_out/LoomProgress.jar
+            loomplugin/_out/LoomTrader.jar
+          if-no-files-found: error

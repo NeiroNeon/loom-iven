@@ -1,0 +1,12 @@
+name: LoomAuction
+version: 1.8.1
+main: ru.loom.auction.AuctionPlugin
+api-version: '1.21'
+authors: [Loom Iven]
+description: Аукцион по §2 — ставки с шагом, таймер с анти-снайпингом, комиссия; доступ с Постояльца
+depend: [LoomCore]
+commands:
+  ah:
+    description: Аукцион Loom Iven
+    aliases: [аукцион, auction]
+    usage: /ah [sell <цена> [выкуп] | my | claim]

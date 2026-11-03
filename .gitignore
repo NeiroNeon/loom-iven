@@ -1,0 +1,27 @@
+# Тяжёлые артефакты не хранятся в git — они идут в GitHub Releases
+server-pack/
+server-pack.zip
+tools/
+download/
+site.zip
+sources-and-scripts.zip
+*.zip
+*.tar.gz
+*.jar
+
+# Сборка и runtime
+loomplugin/_out/
+logs/
+crash-reports/
+*.log
+world/
+world_nether/
+world_the_end/
+
+# Окружение и мусор
+.env
+node_modules/
+skills/
+__pycache__/
+.DS_Store
+Thumbs.db

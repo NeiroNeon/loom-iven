@@ -1,0 +1,36 @@
+name: LoomProgress
+version: 1.8.1
+main: ru.loom.progress.ProgressPlugin
+api-version: '1.21'
+authors: [Loom Iven]
+description: Ивенты новичок/Хранитель+, ачивки, сезонный пропуск, ключи, менторы, зал славы, квартал, ОБЩИЙ СБОР (§3, «Безубыточный участник»)
+depend: [LoomCore]
+softdepend: [LoomPlaytimeRanks, PlaceholderAPI]
+commands:
+  events:
+    description: Ивенты по расписанию
+    aliases: [ивент, ивенты]
+  ach:
+    description: Кастомные достижения (10 категорий, 36 ачивок)
+    aliases: [ачивки, achievements]
+  pass:
+    description: Сезонный пропуск
+    aliases: [пропуск, seasonpass]
+  keys:
+    description: Косметические ключи и косметика
+    aliases: [ключи]
+  mentor:
+    description: Менторская система
+    aliases: [ментор, наставник]
+  fame:
+    description: Зал славы
+    aliases: [слава, hall]
+  quarter:
+    description: Торговый квартал
+    aliases: [квартал]
+  plot:
+    description: Участки квартала
+    aliases: [участок]
+  fund:
+    description: ОБЩИЙ СБОР — целевая сумма, вклады, выплаты 105–150% вклада
+    aliases: [сбор, chipin]

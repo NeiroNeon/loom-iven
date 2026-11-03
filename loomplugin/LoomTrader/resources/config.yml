@@ -1,0 +1,38 @@
+# LoomTrader 1.8.0 — торговец Ивлия: дейлики + недельный заказ.
+
+npc:
+  # Вид НПС: player — игрок-НПС со скином (ProtocolLib), villager — ванильный житель.
+  type: player
+  # Имя над НПС (голограмма). Цвета — §-коды.
+  name: "§6Ивлия §7— странствующая торговщица"
+  # Профиль игрока-НПС (ASCII, до 16 символов — видно в пакетах).
+  profile-name: Ivliya
+  # Скин НПС: подписанная текстура (textures property). Ниже — модель Alex
+  # (рыжие волосы, slim). Замените на свою, сняв с любого аккаунта через
+  # https://sessionserver.mojang.com/session/minecraft/profile/<UUID>?unsigned=false
+  skin-value: "ewogICJ0aW1lc3RhbXAiIDogMTc5MzYzMzU4ODY3MSwKICAicHJvZmlsZUlkIiA6ICI2YWI0MzE3ODg5ZmQ0OTA1OTdmNjBmNjdkOWQ3NmZkOSIsCiAgInByb2ZpbGVOYW1lIiA6ICJNSEZfQWxleCIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS84M2NlZTVjYTZhZmNkYjE3MTI4NWFhMDBlODA0OWMyOTdiMmRiZWJhMGVmYjhmZjk3MGE1Njc3YTFiNjQ0MDMyIiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="
+  skin-signature: "pMm9zppjg1wlnlxCMeUAD5ewfKY7R1NMZG+wMp/75EK1Pfr0I9bElb1lXPHVprkOAo18acBy4jwzrQJdE84EZinsC4RkIqdh4zg3zTMxW8e5t9kANpTsbeMxmN/wqN2uMabIjraCendR+XJee3t8IXlisJAgnoCMM1sxwA7GkSU4Qfw+jJPc0J/wKDssB8vpoLfyEZFzqC+xK7wzVub39YSWaB8iols2BY7eKRnKGqWcQIkWNX9Cgg/I8tA+J39BDqlB0Cx3KdRzBa5RyvR2IvVXw+fJALiydgFtcowPBM/KwidkZPsBtWsf6hiXuXTDyks1muOp6PFLWs2WobIJDcHhTEBEKEXGSG8cyWZE9NcFzcris5dPArE/CtdC+F7ePcNoJkSn5jKzw2Km22P5aoYm7IOZ0omqeqFHw5OvJHq2Zg/Q3xH/71FQYp0QXxboPMZ3hSqhCSMmoXZA8pa1ObGrWDvxEXXe9ocRkQgzh03qDKUO+Xm30q8Lc982CwyKqr14cvLn93o2XsFSO56NYnYKQaBSzXgfO1LcD9La8YBV/xG/ywMrl727h+WTU2uDfN7RdecTyNNUas8hcSYI5MC2bHRp50Fex16CHlwA/Fzh1Sb5Os2lHLhQQpWqgnl/i+izden1UNTjpK0XpOTrsTG7f6ZeYE0iW68jgQiZ35s="
+  # Позиция автоспавна при старте сервера. y: -1 = не спавнить автоматически
+  # (поставьте командой /торговец spawn — координаты сохранятся сюда сами).
+  world: world
+  x: 0.5
+  y: -1
+  z: 0.5
+  yaw: 0.0
+
+daily:
+  # Сколько заказов Ивлия выставляет в сутки (пул — 59, выбирается случайно, у всех одинаково).
+  count: 10
+  # Глобальный множитель наград дейликов (1.0 = базовый баланс).
+  reward-multiplier: 1.0
+
+order:
+  # Автозапуск недельного заказа каждый понедельник (ротация ниже).
+  auto-weekly: true
+  rotation:
+    # <МАТЕРИАЛ>:<цель>:<призовой фонд>
+    - "WHEAT:2000000:20000"
+    - "CARROT:1500000:18000"
+    - "SUGAR_CANE:1200000:18000"
+    - "COAL:500000:25000"
+    - "IRON_INGOT:200000:30000"

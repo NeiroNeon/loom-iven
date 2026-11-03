@@ -1,0 +1,35 @@
+name: LoomCore
+version: 1.8.1
+main: ru.loom.core.LoomCorePlugin
+api-version: '1.21'
+authors: [Loom Iven]
+description: Ядро Loom Iven — монеты, RU/EN, лестница, анти-АФК, чат-плашки, GUI-меню, HUD
+softdepend: [PlaceholderAPI, LuckPerms, floodgate]
+loadbefore: [LoomAuction, LoomProgress, LoomPlaytimeRanks]
+commands:
+  loom:
+    description: Админ-команды ядра LoomCore
+    permission: loom.admin
+  coins:
+    description: Баланс монет и топ игроков
+    aliases: [монеты, money, bal]
+    usage: /монеты [топ|ник]
+  lang:
+    description: Язык интерфейса (RU/EN)
+    aliases: [язык]
+    usage: /язык <ru|en>
+  menu:
+    description: Меню сервера — все функции в GUI
+    aliases: [меню, гуи, gui]
+  profile:
+    description: Профиль игрока и его статистика
+    aliases: [профиль, статистика]
+permissions:
+  loom.admin:
+    description: Администратор сервера (GUI-админка, модерация плагинов)
+    default: op
+  loom.owner:
+    description: Владелец проекта (опасные операции — сброс сезона/экономики)
+    default: op
+    children:
+      loom.admin: true

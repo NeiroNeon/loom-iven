@@ -1,0 +1,18 @@
+name: LoomTrader
+version: 1.8.1
+main: ru.loom.trader.LoomTraderPlugin
+api-version: '1.21'
+authors: [Loom Iven]
+description: НПС-торговец Ивлия — дейлики (до 10/день) и глобальный недельный заказ с призовым фондом
+depend: [LoomCore]
+softdepend: [ProtocolLib]
+commands:
+  quests:
+    description: Дейлики Ивлия — доска заказов (GUI, сдача, лог)
+    aliases: [квесты, дейлики, dailies]
+  order:
+    description: Глобальный недельный заказ — вклад предметами, выплаты по доле вклада
+    aliases: [заказ, госзаказ]
+  trader:
+    description: Управление торговцем и доской (админ)
+    aliases: [торговец]

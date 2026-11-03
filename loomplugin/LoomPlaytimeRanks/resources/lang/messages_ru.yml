@@ -1,0 +1,7 @@
+prefix: "§8[§6Loom§8] §r"
+hours.self: "§7Часов: §6%hours%§7. Ранг: §e%rank%§7. Косметика: §d%cosmetic%§7. До следующего ранга: §f%left% ч§7 (порог §f%next_hours% ч§7)."
+hours.top.header: "§6Топ игроков по наигранным часам:"
+hours.top.line: "§e%pos%. §f%player% §7— §6%hours% ч"
+rankup.resident: "§e%player% §7набрал §f24 ч§7 и получил ранг §6Постоялец§7! Откроется аукцион §o/ah§r"
+rankup.keeper: "§b%player% §7набрал §f120 ч§7 и стал §bХранителем§7! Доступны ивенты Хранителей и квартал."
+rankup.legend: "§4Легенда §f%player% §7набрал §f360 ч§7! Косметика за часы отныне его."

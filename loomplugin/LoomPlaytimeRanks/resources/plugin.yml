@@ -1,0 +1,16 @@
+name: LoomPlaytimeRanks
+version: 1.8.1
+main: ru.loom.playtime.PlaytimePlugin
+api-version: '1.21'
+authors: [Loom Iven]
+description: Часы, лестница активности (Новичок→Постоялец→Хранитель→Легенда), синхронизация LuckPerms
+depend: [LoomCore]
+softdepend: [LuckPerms]
+commands:
+  hours:
+    description: Часы и ранг игрока
+    aliases: [часы, playtime]
+    usage: /часы [топ]
+permissions:
+  hours.top:
+    default: true

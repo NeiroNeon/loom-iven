@@ -1,0 +1,7 @@
+prefix: "§8[§6Loom§8] §r"
+hours.self: "§7Hours: §6%hours%§7. Rank: §e%rank%§7. Cosmetic: §d%cosmetic%§7. Next rank in: §f%left%h§7 (threshold §f%next_hours%h§7)."
+hours.top.header: "§6Top players by playtime:"
+hours.top.line: "§e%pos%. §f%player% §7— §6%hours%h"
+rankup.resident: "§e%player% §7reached §f24h§7 and became §6Resident§7! Auction §o/ah§r unlocked."
+rankup.keeper: "§b%player% §7reached §f120h§7 and became a §bKeeper§7! Keeper events and the quarter are open."
+rankup.legend: "§4Legend §f%player% §7reached §f360h§7! Hour-based cosmetics are theirs now."

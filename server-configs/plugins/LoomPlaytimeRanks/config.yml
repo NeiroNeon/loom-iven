@@ -1,0 +1,8 @@
+# LoomPlaytimeRanks — часы и лестница
+# Соответствие лестницы группам LuckPerms (создаются в luckperms-настройке v1.3):
+luckperms:
+  group:
+    novice: novice        # Новичок (0 ч)
+    resident: resident    # Постоялец (24 ч)
+    keeper: keeper        # Хранитель (120 ч)
+    legend: legend        # Легенда (360 ч)

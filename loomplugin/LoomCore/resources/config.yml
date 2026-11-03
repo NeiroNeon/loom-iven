@@ -1,0 +1,58 @@
+# LoomCore — конфиг ядра Loom Iven
+lang:
+  default: ru            # язык по умолчанию для новых игроков
+
+# Лестница активности (порог в ЧАСАХ наигранного времени)
+ladder:
+  novice: 0              # Новичок
+  resident: 24           # Постоялец
+  keeper: 120            # Хранитель
+  legend: 360            # Легенда
+
+# Косметические ранги за часы (продолжение после Легенды)
+cosmetic-ranks:
+  veteran: 168           # Ветеран  — пропуск ночи, магазин косметики
+  elder: 336             # Старожил — может быть ментором
+  virtuoso: 504          # Виртуоз
+  icon: 672              # Икона
+
+afk:
+  soft-minutes: 10       # бездействие → «расслаблен» (без наград ивентов)
+  hard-hours: 6          # бездействие 6 ч → учёт времени остановлен
+
+# HUD-скорборд справа: логотип сервера в заголовке и полезные строки.
+# MiniMessage-разметка; %переменные% подставляются ядром и плагинами.
+# Ядро: %online% %coins% %hours% %rank% %cosmetic% %biome% %coords% %dir%
+#       %time% %weather% %world% %ping% %session%
+hud:
+  enabled: true
+  update-seconds: 1
+  title: "<bold><color:#E8DED0>LOOM</color> <color:#D08A4A>IVEN</color></bold>"
+  lines-ru:
+    - "<color:#A89C8A>Онлайн:</color> <white>%online%  <color:#A89C8A>Пинг:</color> <white>%ping%"
+    - "<color:#A89C8A>Монеты:</color> <color:#E6B366>%coins%"
+    - "<color:#A89C8A>Часы:</color> <white>%hours%  <color:#E6B366>%rank%"
+    - ""
+    - "<color:#A89C8A>Биом:</color> <white>%biome%"
+    - "<color:#A89C8A>Позиция:</color> <white>%coords% <dark_gray>(%dir%)"
+    - "<color:#A89C8A>Время:</color> <white>%time% <dark_gray>•</dark_gray> %weather%"
+    - ""
+    - "%fund%"
+    - "%order%"
+    - "%quests%"
+    - ""
+    - "<color:#D08A4A>/меню</color> <color:#A89C8A>— все функции"
+  lines-en:
+    - "<color:#A89C8A>Online:</color> <white>%online%  <color:#A89C8A>Ping:</color> <white>%ping%"
+    - "<color:#A89C8A>Coins:</color> <color:#E6B366>%coins%"
+    - "<color:#A89C8A>Hours:</color> <white>%hours%  <color:#E6B366>%rank%"
+    - ""
+    - "<color:#A89C8A>Biome:</color> <white>%biome%"
+    - "<color:#A89C8A>Pos:</color> <white>%coords% <dark_gray>(%dir%)"
+    - "<color:#A89C8A>Time:</color> <white>%time% <dark_gray>•</dark_gray> %weather%"
+    - ""
+    - "%fund%"
+    - "%order%"
+    - "%quests%"
+    - ""
+    - "<color:#D08A4A>/menu</color> <color:#A89C8A>— all features"
