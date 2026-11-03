@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="i.title">Loom Iven — сервер Minecraft: выживание и SMP</title>
+<meta name="description" data-i18n-content="i.desc" content="Loom Iven — кроссплатформенный Minecraft-сервер (Java + Bedrock): экономика на монетах, лестница активности, аукцион, ивенты, дейлики торговца и недельные заказы.">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23131110' stroke='%23d08a4a' stroke-width='2'/%3E%3Cpath d='M8 20c4-8 12-8 16-0M8 12c4 8 12 8 16 0' stroke='%23e6b366' stroke-width='2' fill='none'/%3E%3C/svg%3E">
+<script src="i18n.js" defer></script>
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a class="logo" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-loom"/></svg>
+      Loom <b>Iven</b>
+    </a>
+    <div class="links">
+      <a href="index.html" data-i18n="nav.home">Главная</a>
+      <a href="mechanics.html" data-i18n="nav.mechanics">Механики</a>
+      <a href="quests.html" data-i18n="nav.quests">Квесты и заказы</a>
+      <a href="commands.html" data-i18n="nav.commands">Команды</a>
+      <a href="profile.html" data-i18n="nav.profile">Профиль</a>
+    </div>
+    <div class="ctrls">
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Тема оформления"><svg class="ico" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <button class="lang-btn" id="langBtn" type="button" aria-label="Язык сайта"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg><span id="langLabel">EN</span></button>
+      <button class="burger icon-btn" id="burgerBtn" type="button" aria-label="Меню" aria-expanded="false"><svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="wrap">
+      <a href="index.html" data-i18n="nav.home">Главная</a>
+      <a href="mechanics.html" data-i18n="nav.mechanics">Механики</a>
+      <a href="quests.html" data-i18n="nav.quests">Квесты и заказы</a>
+      <a href="commands.html" data-i18n="nav.commands">Команды</a>
+      <a href="profile.html" data-i18n="nav.profile">Профиль</a>
+    </div>
+  </div>
+</header>
+
+<div class="page">
+
+<section class="hero wrap">
+  <div class="kicker" data-i18n="i.kicker">выживание · смп · java + bedrock</div>
+  <h1 data-i18n-html="i.h1">Loom Iven — сервер,<br>где прогресс ткётся часами игры</h1>
+  <p class="sub" data-i18n="i.sub">Кроссплатформенный сервер на Paper: экономика на монетах, лестница активности,
+  аукцион, ивенты по расписанию, дейлики торговца и недельные заказы для всего сервера.</p>
+  <div class="plates">
+    <span class="plate"><svg class="mico" aria-hidden="true"><use href="#i-pad"/></svg><span data-i18n-html="i.p1"><b>Java</b> 26.x и старее</span></span>
+    <span class="plate"><svg class="mico" aria-hidden="true"><use href="#i-pad"/></svg><span data-i18n-html="i.p2"><b>Bedrock</b> — телефон и консоль</span></span>
+    <span class="plate"><svg class="mico" aria-hidden="true"><use href="#i-globe"/></svg><span data-i18n-html="i.p3">RU / <b>EN</b> на выбор</span></span>
+    <span class="plate"><svg class="mico" aria-hidden="true"><use href="#i-shield"/></svg><span data-i18n-html="i.p4">Античит <b>GrimAC</b></span></span>
+    <span class="plate"><svg class="mico" aria-hidden="true"><use href="#i-key"/></svg><span data-i18n-html="i.p5">Приваты <b>GriefPrevention</b></span></span>
+  </div>
+  <div class="join">
+    <span data-i18n="i.j1">Как зайти:</span>
+    <span class="ip" data-i18n="i.j2">адрес появится после размещения сервера</span>
+    <span data-i18n-html="i.j3">Java — стандартное подключение, Bedrock — порт <b>19132</b></span>
+  </div>
+</section>
+
+<main class="wrap">
+  <h2><svg class="hico" aria-hidden="true"><use href="#i-scroll"/></svg><span data-i18n="i.s1">Что есть на сервере</span></h2>
+  <div class="grid cols3">
+    <div class="card">
+      <div class="tag" data-i18n="i.c1t">экономика</div>
+      <h3><svg class="ico" aria-hidden="true"><use href="#i-coin"/></svg><span data-i18n="i.c1h">Монеты вместо бартера</span></h3>
+      <p data-i18n="i.c1p">Своя валюта, не привязанная к алмазам. Заработать можно на ивентах, аукционе,
+      дейликах торговца и вкладах в заказы. Цены подобраны так, чтобы награда была немного выше рыночной стоимости товара.</p>
+    </div>
+    <div class="card">
+      <div class="tag" data-i18n="i.c2t">прогресс</div>
+      <h3><svg class="ico" aria-hidden="true"><use href="#i-compass"/></svg><span data-i18n="i.c2h">Лестница активности</span></h3>
+      <p data-i18n="i.c2p">Новичок → Постоялец → Хранитель → Легенда по наигранным часам. Ранги открывают аукцион,
+      ивенты Хранителей и участки торгового квартала. Анти-АФК не даёт накручивать время.</p>
+    </div>
+    <div class="card">
+      <div class="tag" data-i18n="i.c3t">каждый день</div>
+      <h3><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg><span data-i18n="i.c3h">Дела на каждый день</span></h3>
+      <p data-i18n="i.c3p">Дейлики торговца Ивлии — до 10 заказов в сутки, 36 ачивок в 10 категориях,
+      сезонный пропуск на 30 дней и косметика за наигранные часы.</p>
+    </div>
+    <div class="card">
+      <div class="tag" data-i18n="i.c4t">вместе</div>
+      <h3><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span data-i18n="i.c4h">Общие цели</span></h3>
+      <p data-i18n="i.c4p">«Общий сбор» — склад монет с гарантией выплаты каждому: от 105% до 150% вклада.
+      Недельный заказ — весь сервер приносит пшеницу, фонд делится по доле вклада.</p>
+    </div>
+    <div class="card">
+      <div class="tag" data-i18n="i.c5t">торговля</div>
+      <h3><svg class="ico" aria-hidden="true"><use href="#i-scale"/></svg><span data-i18n="i.c5h">Аукцион</span></h3>
+      <p data-i18n="i.c5p">Ставки с шагом 5%, лот живёт 48 часов, ставка в последние минуты продлевает торг.
+      Проигравшим — мгновенный возврат, победитель платит комиссию 5%.</p>
+    </div>
+    <div class="card">
+      <div class="tag" data-i18n="i.c6t">кроссплей</div>
+      <h3><svg class="ico" aria-hidden="true"><use href="#i-pad"/></svg><span data-i18n="i.c6h">Java и Bedrock вместе</span></h3>
+      <p data-i18n="i.c6p">Новые и старые Java-клиенты (ViaVersion/ViaBackwards) и Bedrock-клиенты (Geyser + Floodgate)
+      играют в одном мире. Заходить можно и с телефона.</p>
+    </div>
+  </div>
+
+  <h2 id="profile-demo"><svg class="hico" aria-hidden="true"><use href="#i-user"/></svg><span data-i18n="i.prh">Как выглядит профиль</span></h2>
+  <p data-i18n-html="i.prp">Профиль игрока собирается сам: часы, ранг и монеты считаются сервером.
+  На главной — та же плашка, что и на <a href="profile.html">странице профиля</a>.</p>
+  <div class="pcard">
+    <div class="avatar" aria-hidden="true"><svg viewBox="0 0 32 32"><use href="#i-loom"/></svg></div>
+    <div class="pmain">
+      <div class="prow">
+        <span class="pname">Мира</span>
+        <span class="rp keeper">Хранитель</span>
+        <span class="rp mentor" data-i18n="i.prmentor">ментор</span>
+      </div>
+      <div class="pbar" role="img" aria-label="143 из 360 часов"><i style="width:39.7%"></i></div>
+      <div class="pnote" data-i18n="i.prnote">143 ч — до ранга «Легенда» осталось 217 ч</div>
+      <div class="pstats">
+        <div class="pstat"><div class="v">12 480</div><div class="l" data-i18n="i.prs1">монет</div></div>
+        <div class="pstat"><div class="v">21 / 36</div><div class="l" data-i18n="i.prs2">ачивок</div></div>
+        <div class="pstat"><div class="v">12 / 30</div><div class="l" data-i18n="i.prs3">день пропуска</div></div>
+        <div class="pstat"><div class="v">3</div><div class="l" data-i18n="i.prs4">ученика</div></div>
+      </div>
+    </div>
+  </div>
+
+  <h2><svg class="hico" aria-hidden="true"><use href="#i-compass"/></svg><span data-i18n="i.lh">Лестница активности</span></h2>
+  <p data-i18n="i.lp">Время считается только за живую игру: 10 минут без движения отключают ивентные очки,
+  а 6 часов АФК останавливают счётчик часов.</p>
+  <div class="ladder">
+    <div class="step"><div class="hours" data-i18n="i.l1h">0 часов</div><div class="name" data-i18n="i.l1n">Новичок</div><div class="perk" data-i18n="i.l1p">весь базовый геймплей</div></div>
+    <div class="step"><div class="hours" data-i18n="i.l2h">24 часа</div><div class="name" data-i18n="i.l2n">Постоялец</div><div class="perk" data-i18n="i.l2p">открывается аукцион (/ah)</div></div>
+    <div class="step"><div class="hours" data-i18n="i.l3h">120 часов</div><div class="name" data-i18n="i.l3n">Хранитель</div><div class="perk" data-i18n="i.l3p">ивенты Хранителей, участки квартала</div></div>
+    <div class="step"><div class="hours" data-i18n="i.l4h">360 часов</div><div class="name" data-i18n="i.l4n">Легенда</div><div class="perk" data-i18n="i.l4p">ключи косметики за каждые 20 ч</div></div>
+  </div>
+  <p class="note" data-i18n="i.lnote">Выше Легенды — косметические титулы: Ветеран (168 ч, пропуск ночи для всего сервера),
+  Старожил (336 ч, менторство), Виртуоз (504 ч), Икона (672 ч).</p>
+
+  <h2><svg class="hico" aria-hidden="true"><use href="#i-help"/></svg><span data-i18n="i.fh">Частые вопросы</span></h2>
+  <details open>
+    <summary><svg class="mico" aria-hidden="true"><use href="#i-wheat"/></svg><span data-i18n="i.fq1">Кто такая торговщица Ивлия и где её найти?</span></summary>
+    <p data-i18n-html="i.fa1">Это НПС-житель, который каждый день выставляет 10 новых заказов: принеси ресурсы, зелья или ценные предметы —
+    получи монеты с наценкой. Нажми на НПС правой кнопкой — откроется доска заказов. Команда: <code>/квесты</code>.</p>
+  </details>
+  <details>
+    <summary><svg class="mico" aria-hidden="true"><use href="#i-coin"/></svg><span data-i18n="i.fq2">Что за «Общий сбор» и что я получу?</span></summary>
+    <p data-i18n-html="i.fa2">Админ объявляет цель, игроки вносят монеты. Фонд выплат — <b>120% собранного</b> (добавляет казна квартала),
+    каждый участник получает <b>от 105% до 150% своего вклада</b>. Если собрано меньше половины цели — полный возврат: вы ничего не теряете.</p>
+  </details>
+  <details>
+    <summary><svg class="mico" aria-hidden="true"><use href="#i-box"/></svg><span data-i18n="i.fq3">А «недельный заказ» чем отличается?</span></summary>
+    <p data-i18n-html="i.fa3">Недельный заказ — это предметы: каждый понедельник сервер получает цель (например, 2 000 000 пшеницы
+    и фонд 20 000 монет). Фонд делится строго пропорционально вкладам. Подробности — в разделе
+    <a href="quests.html">«Квесты и заказы»</a>.</p>
+  </details>
+  <details>
+    <summary><svg class="mico" aria-hidden="true"><use href="#i-coin"/></svg><span data-i18n="i.fq4">Нужен ли донат, чтобы играть комфортно?</span></summary>
+    <p data-i18n="i.fa4">Нет. Все игровые механики доступны бесплатно. Платная ветка существует только в сезонном пропуске
+    (25 000 монет или рубли через магазин), а её уникальная косметика через сезон переходит в бесплатную ветку.</p>
+  </details>
+  <details>
+    <summary><svg class="mico" aria-hidden="true"><use href="#i-pad"/></svg><span data-i18n="i.fq5">Какой версией можно зайти?</span></summary>
+    <p data-i18n="i.fa5">Java — актуальные версии (Paper 26.3) и более старые через ViaVersion/ViaBackwards.
+    Bedrock — любой актуальный клиент через Geyser, порт 19132.</p>
+  </details>
+  <details>
+    <summary><svg class="mico" aria-hidden="true"><use href="#i-key"/></svg><span data-i18n="i.fq6">Как приватить территорию?</span></summary>
+    <p data-i18n="i.fa6">Золотой лопатой выделяешь углы участка — приват создаётся автоматически (GriefPrevention).
+    Строительные инструменты — WorldEdit для доверенных работ, защита — WorldGuard.</p>
+  </details>
+</main>
+
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <div class="fbrand">
+        <a class="logo" href="index.html"><svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-loom"/></svg>Loom <b>Iven</b></a>
+        <p data-i18n="foot.about">Minecraft-сервер Java + Bedrock: монеты, прогресс и общий труд.</p>
+      </div>
+      <div>
+        <div class="fhead" data-i18n="foot.pages">Страницы</div>
+        <a href="index.html" data-i18n="nav.home">Главная</a>
+        <a href="mechanics.html" data-i18n="nav.mechanics">Механики</a>
+        <a href="quests.html" data-i18n="nav.quests">Квесты и заказы</a>
+        <a href="commands.html" data-i18n="nav.commands">Команды</a>
+        <a href="profile.html" data-i18n="nav.profile">Профиль</a>
+      </div>
+      <div>
+        <div class="fhead" data-i18n="foot.docs">Документы</div>
+        <a href="terms.html" data-i18n="foot.terms">Условия использования</a>
+        <a href="privacy.html" data-i18n="foot.privacy">Конфиденциальность</a>
+        <a href="offer.html" data-i18n="foot.offer">Договор оферты</a>
+      </div>
+      <div>
+        <div class="fhead" data-i18n="foot.community">Сообщество</div>
+        <a class="fsoc" href="https://discord.gg/2cuM7kpR" target="_blank" rel="noopener"><svg class="mico" aria-hidden="true"><use href="#i-dc"/></svg>Discord</a>
+        <a class="fsoc" href="https://t.me/SYNAPSE_of" target="_blank" rel="noopener"><svg class="mico" aria-hidden="true"><use href="#i-tg"/></svg>Telegram</a>
+      </div>
+    </div>
+    <div class="fbase">
+      <span data-i18n="foot.copy">© 2026 Loom Iven. Проект не связан с Mojang и Microsoft.</span>
+      <span class="creator" data-i18n-html="foot.creator">Сайт собрал <a href="https://t.me/SYNAPSE_of" target="_blank" rel="noopener">SYNAPSE</a> · <a href="https://discord.gg/2cuM7kpR" target="_blank" rel="noopener">Discord</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
