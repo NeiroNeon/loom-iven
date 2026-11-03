@@ -1,0 +1,22 @@
+Copyright (c) 2026 Loom Iven project contributors
+
+Все права защищены / All rights reserved.
+
+Код, конфигурации, тексты и дизайн этого репозитория являются собственностью
+автора проекта. Разрешаются просмотр, форк и создание pull request'ов в рамках
+функций платформы GitHub. Любое иное использование, воспроизведение или
+распространение кода и материалов (в том числе в составе серверных сборок)
+без письменного разрешения автора не допускается.
+
+The code, configurations, texts and design in this repository are the property
+of the project author. Viewing, forking and submitting pull requests via GitHub
+is permitted. Any other use, reproduction or distribution of the code and
+materials (including as part of server packs) without the author's written
+permission is not allowed.
+
+Сторонние компоненты (Paper, LuckPerms, TAB, Geyser/Floodgate, EssentialsX и др.)
+не входят в эту лицензию и распространяются под лицензиями своих правообладателей —
+см. PLUGINS.md.
+
+Third-party components (Paper, LuckPerms, TAB, Geyser/Floodgate, EssentialsX, etc.)
+are not covered by this license and are distributed under their own terms — see PLUGINS.md.
