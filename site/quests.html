@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="q.title">Квесты и заказы — Loom Iven</title>
+<meta name="description" data-i18n-content="q.desc" content="Дейлики торговца Ивлии (до 10 в день) и глобальный недельный заказ Loom Iven: пул заказов, баланс наград, примеры расчёта призового фонда.">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23131110' stroke='%23d08a4a' stroke-width='2'/%3E%3Cpath d='M8 20c4-8 12-8 16-0M8 12c4 8 12 8 16 0' stroke='%23e6b366' stroke-width='2' fill='none'/%3E%3C/svg%3E">
+<script src="i18n.js" defer></script>
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a class="logo" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-loom"/></svg>
+      Loom <b>Iven</b>
+    </a>
+    <div class="links">
+      <a href="index.html" data-i18n="nav.home">Главная</a>
+      <a href="mechanics.html" data-i18n="nav.mechanics">Механики</a>
+      <a href="quests.html" data-i18n="nav.quests">Квесты и заказы</a>
+      <a href="commands.html" data-i18n="nav.commands">Команды</a>
+      <a href="profile.html" data-i18n="nav.profile">Профиль</a>
+    </div>
+    <div class="ctrls">
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Тема оформления"><svg class="ico" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <button class="lang-btn" id="langBtn" type="button" aria-label="Язык сайта"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg><span id="langLabel">EN</span></button>
+      <button class="burger icon-btn" id="burgerBtn" type="button" aria-label="Меню" aria-expanded="false"><svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="wrap">
+      <a href="index.html" data-i18n="nav.home">Главная</a>
+      <a href="mechanics.html" data-i18n="nav.mechanics">Механики</a>
+      <a href="quests.html" data-i18n="nav.quests">Квесты и заказы</a>
+      <a href="commands.html" data-i18n="nav.commands">Команды</a>
+      <a href="profile.html" data-i18n="nav.profile">Профиль</a>
+    </div>
+  </div>
+</header>
+
+<div class="page">
+
+<main class="wrap">
+  <h1 data-i18n="q.h1">Квесты и заказы</h1>
+  <p class="sub" style="color:var(--muted)" data-i18n-html="q.sub">Две системы, которые держат экономику в движении:
+  личные <b>дейлики торговца Ивлии</b> и <b>глобальный недельный заказ</b> для всего сервера.</p>
+
+  <h2><svg class="hico" aria-hidden="true"><use href="#i-wheat"/></svg><span data-i18n="q.tr.h">Торговщица Ивлия: дейлики</span></h2>
+  <h3 data-i18n="q.tr.h3a">Как это работает</h3>
+  <ul>
+    <li data-i18n-html="q.tr.l1">На спавне стоит НПС — <b>Ивлия, странствующая торговщица</b>. Правый клик — доска заказов в GUI.</li>
+    <li data-i18n-html="q.tr.l2">Каждый день в 00:00 доска получает <b>10 новых заказов</b> из пула 59 — у всех игроков список одинаковый.</li>
+    <li data-i18n-html="q.tr.l3">Каждый заказ — принести набор предметов: ресурсы, зелья или редкие предметы. Клик по заказу = сдача:
+    предметы изымаются, монеты приходят мгновенно.</li>
+    <li data-i18n-html="q.tr.l4">Каждый заказ сдаётся <b>один раз в день</b>, всего — <b>не больше 10 в сутки</b> на игрока.
+    К слову, это и есть дневной лимит.</li>
+    <li data-i18n-html="q.tr.l5">Альтернативы GUI: <code>/квесты список</code> — список текстом, <code>/квесты сдать &lt;id&gt;</code> — сдача по id,
+    <code>/квесты лог</code> — что уже сдано.</li>
+  </ul>
+
+  <h3 data-i18n="q.tr.h3b">Почему заказы хочется брать</h3>
+  <p data-i18n="q.tr.p1">Баланс построен по формуле:</p>
+  <div class="formula" data-i18n="q.tr.f">награда = количество × рыночная цена предмета × бонус (1.25–1.4)</div>
+  <p data-i18n="q.tr.p2">Бонус сверху — «зарплата за доставку»: сдав заказ, игрок получает на 25–40% больше,
+  чем стоил бы товар сам по себе. Поэтому квест выгоднее просто продать ресурсы или использовать их.
+  Сложные заказы (зелья варить, из Края/Ада таскать) получают больший бонус, чем массовое фермерство.</p>
+
+  <h3 data-i18n="q.tr.h3c">Категории и примеры заказов</h3>
+  <table>
+    <tr><th data-i18n="q.th1">Категория</th><th data-i18n="q.th2">Заказ</th><th data-i18n="q.th3">Награда</th><th data-i18n="q.th4">Логика баланса</th></tr>
+    <tr><td data-i18n="q.cat1">ресурсы</td><td data-i18n="q.r1">1024 пшеницы</td><td data-i18n-html="q.v1">110 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d1">массовое, дешёвое, бонус +35%</td></tr>
+    <tr><td data-i18n="q.cat1">ресурсы</td><td data-i18n="q.r2">768 моркови</td><td data-i18n-html="q.v2">90 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d2">фермерство</td></tr>
+    <tr><td data-i18n="q.cat1">ресурсы</td><td data-i18n="q.r3">512 сахарного тростника</td><td data-i18n-html="q.v3">95 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d3">ферма + комбинирование</td></tr>
+    <tr><td data-i18n="q.cat1">ресурсы</td><td data-i18n="q.r4">192 железных слитка</td><td data-i18n-html="q.v4">840 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d4">руда ценнее еды</td></tr>
+    <tr><td data-i18n="q.cat1">ресурсы</td><td data-i18n="q.r5">32 алмаза</td><td data-i18n-html="q.v5">1165 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d5">редкая руда — большой бонус</td></tr>
+    <tr><td data-i18n="q.cat1">ресурсы</td><td data-i18n="q.r6">32 жемчужины Края</td><td data-i18n-html="q.v6">500 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d6">риск (Энд, эндермены)</td></tr>
+    <tr><td data-i18n="q.cat1">ресурсы</td><td data-i18n="q.r7">24 стержня Ифрита</td><td data-i18n-html="q.v7">500 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d7">риск (крепость в Аду)</td></tr>
+    <tr><td data-i18n="q.cat1">ресурсы</td><td data-i18n="q.r8">16 слёз гаста</td><td data-i18n-html="q.v8">475 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d8">высокий риск</td></tr>
+    <tr><td data-i18n="q.cat1">ресурсы</td><td data-i18n="q.r9">128 сот</td><td data-i18n-html="q.v9">90 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d9">пчеловодство</td></tr>
+    <tr><td data-i18n="q.cat1">ресурсы</td><td data-i18n="q.r10">1024 снежка</td><td data-i18n-html="q.v10">65 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d10">шуточный «снежный заказ»</td></tr>
+    <tr><td data-i18n="q.cat2">зелья</td><td data-i18n="q.r11">6 зелий исцеления II</td><td data-i18n-html="q.v11">325 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d11">варка: слеза + арбуз</td></tr>
+    <tr><td data-i18n="q.cat2">зелья</td><td data-i18n="q.r12">6 зелий силы II</td><td data-i18n-html="q.v12">350 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d12">варка: порох + факел + лестница</td></tr>
+    <tr><td data-i18n="q.cat2">зелья</td><td data-i18n="q.r13">8 зелий огнестойкости</td><td data-i18n-html="q.v13">380 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d13">нужен магмовый крем</td></tr>
+    <tr><td data-i18n="q.cat2">зелья</td><td data-i18n="q.r14">12 зелий ночного зрения</td><td data-i18n-html="q.v14">320 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d14">морковь + золотые куски</td></tr>
+    <tr><td data-i18n="q.cat2">зелья</td><td data-i18n="q.r15">4 зелья невидимости</td><td data-i18n-html="q.v15">300 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d15">нужен глаз кролика</td></tr>
+    <tr><td data-i18n="q.cat3">предметы</td><td data-i18n="q.r16">4 зачарованные книги</td><td data-i18n-html="q.v16">600 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d16">любые зачарования</td></tr>
+    <tr><td data-i18n="q.cat3">предметы</td><td data-i18n="q.r17">16 золотых яблок</td><td data-i18n-html="q.v17">730 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d17">8 × 8 слитков на штуку</td></tr>
+    <tr><td data-i18n="q.cat3">предметы</td><td data-i18n="q.r18">128 золотой моркови</td><td data-i18n-html="q.v18">915 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d18">корм для лошадей, долго</td></tr>
+    <tr><td data-i18n="q.cat3">предметы</td><td data-i18n="q.r19">64 бутылька опыта</td><td data-i18n-html="q.v19">540 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d19">только у монахов-жителей</td></tr>
+    <tr><td data-i18n="q.cat3">предметы</td><td data-i18n="q.r20">2 сердца моря</td><td data-i18n-html="q.v20">810 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d20">добыча с карт сокровищ</td></tr>
+    <tr><td data-i18n="q.cat3">предметы</td><td data-i18n="q.r21">4 магнитита</td><td data-i18n-html="q.v21">470 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td><td data-i18n="q.d21">хитрый крафт</td></tr>
+  </table>
+  <p class="note" data-i18n-html="q.note1">Полный пул — 59 заказов (34 ресурса, 8 зелий, 17 предметов) в конфиге и исходниках плагина LoomTrader.
+  Админ может перегенерировать доску на лету: <code>/торговец реролл</code> — и менять множитель наград
+  (<code>daily.reward-multiplier</code>).</p>
+
+  <h3 data-i18n="q.tr.h3d">Взаимодействия</h3>
+  <ul>
+    <li data-i18n-html="q.tr.i1"><b>Доска ↔ инвентарь:</b> в лоре каждого заказа видно «У вас: N / нужно M» — не нужно открывать инвентарь.</li>
+    <li data-i18n-html="q.tr.i2"><b>Дейлики ↔ ивенты:</b> заказ «1024 пшеницы» удобно сочетается с ивентом «Жатва» (воскресенье),
+    а «железо» — со «Сбором железа» (среда). Ивент даёт очки, дейлик — монеты за тот же ресурс.</li>
+    <li data-i18n-html="q.tr.i3"><b>Дейлики ↔ аукцион:</b> выручка с дейликов — безопасный источник монет для первых ставок.</li>
+    <li data-i18n-html="q.tr.i4"><b>Язык:</b> названия заказов, категорий и вся доска показываются на языке игрока (RU/EN).</li>
+  </ul>
+
+  <h2><svg class="hico" aria-hidden="true"><use href="#i-box"/></svg><span data-i18n="q.or.h">Глобальный недельный заказ</span></h2>
+  <h3 data-i18n="q.or.h3a">Суть</h3>
+  <p data-i18n-html="q.or.p1">Каждый понедельник в 00:00 сервер автоматически получает <b>одну большую цель на всех</b>
+  (ротация из 5 заказов; админ может запустить свой в любой момент).</p>
+  <table>
+    <tr><th data-i18n="q.thw1">Неделя</th><th data-i18n="q.thw2">Цель</th><th data-i18n="q.thw3">Призовой фонд</th></tr>
+    <tr><td data-i18n="q.w1">пшеница</td><td>2 000 000</td><td data-i18n-html="q.wv1">20 000 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td></tr>
+    <tr><td data-i18n="q.w2">морковь</td><td>1 500 000</td><td data-i18n-html="q.wv2">18 000 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td></tr>
+    <tr><td data-i18n="q.w3">сахарный тростник</td><td>1 200 000</td><td data-i18n-html="q.wv3">18 000 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td></tr>
+    <tr><td data-i18n="q.w4">уголь</td><td>500 000</td><td data-i18n-html="q.wv4">25 000 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td></tr>
+    <tr><td data-i18n="q.w5">железные слитки</td><td>200 000</td><td data-i18n-html="q.wv5">30 000 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></td></tr>
+  </table>
+
+  <h3 data-i18n="q.or.h3b">Как участвовать</h3>
+  <ul>
+    <li data-i18n-html="q.or.l1">Сдача: <code>/заказ сдать &lt;кол-во&gt;</code> — предметы уходят из инвентаря, вклад фиксируется.
+    <code>/заказ сдать все</code> — сдать всё, что есть, целиком.</li>
+    <li data-i18n-html="q.or.l2">Прогресс виден всем: <b>boss-bar</b> над хотбаром + объявления на вехах <b>25 / 50 / 75%</b>.</li>
+    <li data-i18n-html="q.or.l3">Статус: <code>/заказ</code> — цель, собрано, ваш вклад, ваш % и прогноз выплаты.
+    Лидерборд: <code>/заказ топ</code>.</li>
+    <li data-i18n-html="q.or.l4">Цель достигнута — заказ завершается <b>сразу</b>, не дожидаясь конца недели.</li>
+    <li data-i18n-html="q.or.l5">Срок вышел, а цель не добрали — фонд всё равно делится по долям вклада: усилие не пропадает.</li>
+  </ul>
+
+  <h3 data-i18n="q.or.h3c">Как делится фонд</h3>
+  <div class="formula" data-i18n="q.or.f">выплата игрока = фонд × (его вклад / сумма всех вкладов)</div>
+  <p data-i18n-html="q.or.p2">Доля каждого <b>строго пропорциональна вкладу</b> — кто принёс больше пшеницы, тот получил больше монет.
+  Минимальная выплата — 1 монета, если вклад был положительным (даже 2 пшеницы не «сгорают»).</p>
+
+  <div class="example">
+    <b data-i18n="q.or.exh">Пример (пшеница, фонд 20 000 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg>):</b>
+    <span data-i18n-html="q.or.ex"><br>• Стазис принёс <b>200 000 пшеницы</b> из 1 000 000 собранных → доля 20% → <span class="ok">+4 000 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></span><br>
+    • Мира внесла <b>50 000 пшеницы</b> → доля 5% → <span class="ok">+1 000 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></span><br>
+    • Тимоша принёс <b>2 пшеницы</b> → доля 0.0002% → <span class="ok">+1 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg></span> (минимум)<br>
+    • Итог: выплачено ровно 20 000 <svg class="mico coin" aria-hidden="true"><use href="#i-coin"/></svg> — фонд не «печатается» и не «сгорает».</span>
+    <div class="note" data-i18n="q.or.exn">Смысл % награды меняется от вклада: чем больше доля сервера, тем меньше твоя доля фонда —
+    поэтому выгодно сдавать рано и стабильно всю неделю.</div>
+  </div>
+
+  <h3 data-i18n="q.or.h3d">Взаимодействия</h3>
+  <ul>
+    <li data-i18n-html="q.or.i1"><b>Заказ ↔ ивенты:</b> недели пшеницы и тростника синхронны с «Жатвой» (вс) — очки ивента и вклад в заказ за один и тот же урожай.</li>
+    <li data-i18n-html="q.or.i2"><b>Заказ ↔ общий сбор:</b> это разные механики. «Сбор» собирает монеты (админ запускает к любому событию, выплаты — правило «Безубыточного участника»: 105–150% вклада, фонд 120% собранного),
+    «заказ» — предметы и повторяется каждую неделю автоматически.</li>
+    <li data-i18n-html="q.or.i3"><b>Заказ ↔ аукцион:</b> после выплат на аукционе традиционно больше активных ставок — фонд вливается в экономику.</li>
+    <li data-i18n-html="q.or.i4"><b>Админ-управление:</b> <code>/заказ start &lt;предмет&gt; &lt;цель&gt; &lt;фонд&gt; [дней]</code>,
+    <code>/заказ finish</code>, <code>/заказ cancel</code> (без выплат).</li>
+  </ul>
+
+  <h2><svg class="hico" aria-hidden="true"><use href="#i-help"/></svg><span data-i18n="q.f.h">Частые вопросы</span></h2>
+  <details>
+    <summary><svg class="mico" aria-hidden="true"><use href="#i-compass"/></svg><span data-i18n="q.f.q1">Можно ли сдавать квесты, если ты новичок (0 часов)?</span></summary>
+    <p data-i18n="q.f.a1">Да — дейлики и недельный заказ доступны всем с первого захода. Это осознанный дизайн: новичок
+    сразу имеет безопасный источник монет, не зависящий от аукциона (туда путь с 24 часов).</p>
+  </details>
+  <details>
+    <summary><svg class="mico" aria-hidden="true"><use href="#i-box"/></svg><span data-i18n="q.f.q2">Что если у меня в стаке названные предметы (необычные мечи, именные слитки)?</span></summary>
+    <p data-i18n="q.f.a2">Обычные заказы принимают предмет по типу, поэтому именные слитки тоже подходят. А вот зелья принимаются
+    строго по типу зелья, и зачарованные книги — только настоящие зачарованные.</p>
+  </details>
+  <details>
+    <summary><svg class="mico" aria-hidden="true"><use href="#i-users"/></svg><span data-i18n="q.f.q3">А если два игрока сдают по очереди, чтобы «накрутить» фонд?</span></summary>
+    <p data-i18n="q.f.a3">Накрутить нельзя: фонд фиксированный, он не растёт от количества вкладчиков. Перераспределить его
+    «между своими» можно только реально принеся больше предметов — а это честная доля.</p>
+  </details>
+  <details>
+    <summary><svg class="mico" aria-hidden="true"><use href="#i-coin"/></svg><span data-i18n="q.f.q4">Предметы можно вернуть, если заказ отменили?</span></summary>
+    <p data-i18n-html="q.f.a4">В недельном заказе предметы уже израсходованы на цель, поэтому отмена админом проходит без выплат и возвратов —
+    отмена используется только в исключительных случаях. В «Общем сборе» (монеты) действует правило «Безубыточного участника»:
+    недобор <50% цели — возврат 100% вклада, отмена админом — тоже возврат.</p>
+  </details>
+</main>
+
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <div class="fbrand">
+        <a class="logo" href="index.html"><svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-loom"/></svg>Loom <b>Iven</b></a>
+        <p data-i18n="foot.about">Minecraft-сервер Java + Bedrock: монеты, прогресс и общий труд.</p>
+      </div>
+      <div>
+        <div class="fhead" data-i18n="foot.pages">Страницы</div>
+        <a href="index.html" data-i18n="nav.home">Главная</a>
+        <a href="mechanics.html" data-i18n="nav.mechanics">Механики</a>
+        <a href="quests.html" data-i18n="nav.quests">Квесты и заказы</a>
+        <a href="commands.html" data-i18n="nav.commands">Команды</a>
+        <a href="profile.html" data-i18n="nav.profile">Профиль</a>
+      </div>
+      <div>
+        <div class="fhead" data-i18n="foot.docs">Документы</div>
+        <a href="terms.html" data-i18n="foot.terms">Условия использования</a>
+        <a href="privacy.html" data-i18n="foot.privacy">Конфиденциальность</a>
+        <a href="offer.html" data-i18n="foot.offer">Договор оферты</a>
+      </div>
+      <div>
+        <div class="fhead" data-i18n="foot.community">Сообщество</div>
+        <a class="fsoc" href="https://discord.gg/2cuM7kpR" target="_blank" rel="noopener"><svg class="mico" aria-hidden="true"><use href="#i-dc"/></svg>Discord</a>
+        <a class="fsoc" href="https://t.me/SYNAPSE_of" target="_blank" rel="noopener"><svg class="mico" aria-hidden="true"><use href="#i-tg"/></svg>Telegram</a>
+      </div>
+    </div>
+    <div class="fbase">
+      <span data-i18n="foot.copy">© 2026 Loom Iven. Проект не связан с Mojang и Microsoft.</span>
+      <span class="creator" data-i18n-html="foot.creator">Сайт собрал <a href="https://t.me/SYNAPSE_of" target="_blank" rel="noopener">SYNAPSE</a> · <a href="https://discord.gg/2cuM7kpR" target="_blank" rel="noopener">Discord</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

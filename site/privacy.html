@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="pv.title">Конфиденциальность — Loom Iven</title>
+<meta name="description" data-i18n-content="pv.desc" content="Политика конфиденциальности Loom Iven: какие данные собирает сервер и сайт, зачем, как хранятся и как их удалить.">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23131110' stroke='%23d08a4a' stroke-width='2'/%3E%3Cpath d='M8 20c4-8 12-8 16-0M8 12c4 8 12 8 16 0' stroke='%23e6b366' stroke-width='2' fill='none'/%3E%3C/svg%3E">
+<script src="i18n.js" defer></script>
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a class="logo" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-loom"/></svg>
+      Loom <b>Iven</b>
+    </a>
+    <div class="links">
+      <a href="index.html" data-i18n="nav.home">Главная</a>
+      <a href="mechanics.html" data-i18n="nav.mechanics">Механики</a>
+      <a href="quests.html" data-i18n="nav.quests">Квесты и заказы</a>
+      <a href="commands.html" data-i18n="nav.commands">Команды</a>
+      <a href="profile.html" data-i18n="nav.profile">Профиль</a>
+    </div>
+    <div class="ctrls">
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Тема оформления"><svg class="ico" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <button class="lang-btn" id="langBtn" type="button" aria-label="Язык сайта"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg><span id="langLabel">EN</span></button>
+      <button class="burger icon-btn" id="burgerBtn" type="button" aria-label="Меню" aria-expanded="false"><svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="wrap">
+      <a href="index.html" data-i18n="nav.home">Главная</a>
+      <a href="mechanics.html" data-i18n="nav.mechanics">Механики</a>
+      <a href="quests.html" data-i18n="nav.quests">Квесты и заказы</a>
+      <a href="commands.html" data-i18n="nav.commands">Команды</a>
+      <a href="profile.html" data-i18n="nav.profile">Профиль</a>
+    </div>
+  </div>
+</header>
+
+<div class="page">
+
+<main class="wrap legal">
+  <h1 data-i18n="pv.h1">Политика конфиденциальности</h1>
+  <p class="docmeta" data-i18n="pv.meta">Редакция от 1 ноября 2026 · проект Loom Iven</p>
+
+  <h2 data-i18n="pv.s1h">1. Какие данные собираются</h2>
+  <ul>
+    <li data-i18n-html="pv.s1l1"><b>Игровые данные:</b> никнейм, UUID аккаунта, наигранное время, статистика механик
+    (монеты, ачивки, вклады в сборы и заказы, ранги).</li>
+    <li data-i18n-html="pv.s1l2"><b>Технические журналы:</b> IP-адрес и время подключений — стандартные логи сервера,
+    используются только для модерации и разбора инцидентов (CoreProtect, логи Paper).</li>
+    <li data-i18n-html="pv.s1l3"><b>Связка Discord:</b> если вы пользуетесь DiscordSRV, хранится пара «Minecraft-аккаунт —
+    Discord-аккаунт» для чат-моста и выдачи ролей.</li>
+    <li data-i18n-html="pv.s1l4"><b>Настройки сайта:</b> выбранная тема и язык сохраняются локально в вашем браузере
+    (localStorage) и никуда не отправляются.</li>
+  </ul>
+
+  <h2 data-i18n="pv.s2h">2. Зачем эти данные</h2>
+  <p data-i18n="pv.s2p1">Данные используются для работы игровых механик (лестница активности, аукцион, пропуска),
+  модерации и безопасности, а также для статистики развития Проекта. Никакой продажи или передачи данных
+  третьим лицам нет.</p>
+
+  <h2 data-i18n="pv.s3h">3. Хранение</h2>
+  <p data-i18n="pv.s3p1">Данные хранятся на инфраструктуре Проекта, доступ к ним есть только у администрации.
+  Игровая статистика видна другим игрокам в публичных топах (часы, монеты, зал славы) — это часть геймплея.</p>
+
+  <h2 data-i18n="pv.s4h">4. Удаление</h2>
+  <p data-i18n-html="pv.s4p1">Вы можете попросить удалить свою игровую статистику и привязку Discord, написав администрации
+  в <a href="https://discord.gg/2cuM7kpR" target="_blank" rel="noopener">Discord</a> или
+  <a href="https://t.me/SYNAPSE_of" target="_blank" rel="noopener">Telegram</a>. Технические журналы хранятся
+  ограниченное время и удаляются при ротации логов.</p>
+
+  <h2 data-i18n="pv.s5h">5. Возраст</h2>
+  <p data-i18n="pv.s5p1">Проект предназначен для игроков, которым разрешена игра в Minecraft по EULA Mojang и местному
+  законодательству. Если вам меньше необходимого возраста, играйте с разрешения родителей.</p>
+
+  <h2 data-i18n="pv.s6h">6. Изменения политики</h2>
+  <p data-i18n="pv.s6p1">Актуальная редакция всегда доступна на этой странице. Существенные изменения анонсируются
+  в сообществе Проекта.</p>
+</main>
+
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <div class="fbrand">
+        <a class="logo" href="index.html"><svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-loom"/></svg>Loom <b>Iven</b></a>
+        <p data-i18n="foot.about">Minecraft-сервер Java + Bedrock: монеты, прогресс и общий труд.</p>
+      </div>
+      <div>
+        <div class="fhead" data-i18n="foot.pages">Страницы</div>
+        <a href="index.html" data-i18n="nav.home">Главная</a>
+        <a href="mechanics.html" data-i18n="nav.mechanics">Механики</a>
+        <a href="quests.html" data-i18n="nav.quests">Квесты и заказы</a>
+        <a href="commands.html" data-i18n="nav.commands">Команды</a>
+        <a href="profile.html" data-i18n="nav.profile">Профиль</a>
+      </div>
+      <div>
+        <div class="fhead" data-i18n="foot.docs">Документы</div>
+        <a href="terms.html" data-i18n="foot.terms">Условия использования</a>
+        <a href="privacy.html" data-i18n="foot.privacy">Конфиденциальность</a>
+        <a href="offer.html" data-i18n="foot.offer">Договор оферты</a>
+      </div>
+      <div>
+        <div class="fhead" data-i18n="foot.community">Сообщество</div>
+        <a class="fsoc" href="https://discord.gg/2cuM7kpR" target="_blank" rel="noopener"><svg class="mico" aria-hidden="true"><use href="#i-dc"/></svg>Discord</a>
+        <a class="fsoc" href="https://t.me/SYNAPSE_of" target="_blank" rel="noopener"><svg class="mico" aria-hidden="true"><use href="#i-tg"/></svg>Telegram</a>
+      </div>
+    </div>
+    <div class="fbase">
+      <span data-i18n="foot.copy">© 2026 Loom Iven. Проект не связан с Mojang и Microsoft.</span>
+      <span class="creator" data-i18n-html="foot.creator">Сайт собрал <a href="https://t.me/SYNAPSE_of" target="_blank" rel="noopener">SYNAPSE</a> · <a href="https://discord.gg/2cuM7kpR" target="_blank" rel="noopener">Discord</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

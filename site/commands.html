@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="cmd.title">Команды — Loom Iven</title>
+<meta name="description" data-i18n-content="cmd.desc" content="Полный справочник команд Loom Iven: меню и профиль в GUI, HUD-скорборд, экономика, часы, аукцион, ивенты, ачивки, пропуск, ключи, менторы, квартал, общий сбор, квесты торговца и недельный заказ.">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23131110' stroke='%23d08a4a' stroke-width='2'/%3E%3Cpath d='M8 20c4-8 12-8 16-0M8 12c4 8 12 8 16 0' stroke='%23e6b366' stroke-width='2' fill='none'/%3E%3C/svg%3E">
+<script src="i18n.js" defer></script>
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a class="logo" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-loom"/></svg>
+      Loom <b>Iven</b>
+    </a>
+    <div class="links">
+      <a href="index.html" data-i18n="nav.home">Главная</a>
+      <a href="mechanics.html" data-i18n="nav.mechanics">Механики</a>
+      <a href="quests.html" data-i18n="nav.quests">Квесты и заказы</a>
+      <a href="commands.html" data-i18n="nav.commands">Команды</a>
+      <a href="profile.html" data-i18n="nav.profile">Профиль</a>
+    </div>
+    <div class="ctrls">
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Тема оформления"><svg class="ico" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <button class="lang-btn" id="langBtn" type="button" aria-label="Язык сайта"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg><span id="langLabel">EN</span></button>
+      <button class="burger icon-btn" id="burgerBtn" type="button" aria-label="Меню" aria-expanded="false"><svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="wrap">
+      <a href="index.html" data-i18n="nav.home">Главная</a>
+      <a href="mechanics.html" data-i18n="nav.mechanics">Механики</a>
+      <a href="quests.html" data-i18n="nav.quests">Квесты и заказы</a>
+      <a href="commands.html" data-i18n="nav.commands">Команды</a>
+      <a href="profile.html" data-i18n="nav.profile">Профиль</a>
+    </div>
+  </div>
+</header>
+
+<div class="page">
+
+<main class="wrap">
+  <h1 data-i18n="cmd.h1">Справочник команд</h1>
+  <p class="sub" style="color:var(--muted)" data-i18n-html="cmd.sub">Все команды работают и по русским, и по английским алиасам.
+  Язык ответов — выбранный игроком (<code>/язык ru|en</code>).</p>
+
+  <h2><svg class="hico" aria-hidden="true"><use href="#i-coin"/></svg><span data-i18n="cmd.eco.h">Экономика и ядро (LoomCore)</span></h2>
+  <table>
+    <tr><th data-i18n="cmd.th1">Команда</th><th data-i18n="cmd.th2">Кто</th><th data-i18n="cmd.th3">Описание</th></tr>
+    <tr><td><code>/монеты</code> <span class="dim">[ник]</span></td><td data-i18n="cmd.all">все</td><td data-i18n-html="cmd.eco.r1">баланс монет (алиасы: /coins, /money, /bal)</td></tr>
+    <tr><td><code>/язык</code> <span class="dim">ru|en</span></td><td data-i18n="cmd.all">все</td><td data-i18n-html="cmd.eco.r2">личный язык интерфейса (алиас: /lang)</td></tr>
+    <tr><td><code>/меню</code></td><td data-i18n="cmd.all">все</td><td data-i18n-html="cmd.eco.r5">GUI-меню всех функций сервера (алиасы: /menu, /гуи); Bedrock — нативная форма</td></tr>
+    <tr><td><code>/профиль</code></td><td data-i18n="cmd.all">все</td><td data-i18n-html="cmd.eco.r6">профиль игрока и вся статистика (алиас: /profile); Bedrock — форма</td></tr>
+    <tr><td><code>/loom coins give|take|set &lt;ник&gt; &lt;сумма&gt;</code></td><td data-i18n="cmd.admin">админ</td><td data-i18n-html="cmd.eco.r3">управление монетами</td></tr>
+    <tr><td><code>/loom reload</code></td><td data-i18n="cmd.admin">админ</td><td data-i18n-html="cmd.eco.r4">перечитать конфиги</td></tr>
+  </table>
+
+  <h2><svg class="hico" aria-hidden="true"><use href="#i-pad"/></svg><span data-i18n="cmd.gui.h">GUI и HUD (LoomCore 1.5)</span></h2>
+  <p class="sub" style="color:var(--muted)" data-i18n-html="cmd.gui.p">Все действия, которым уместен интерфейс, сделаны через GUI: на Java — привычные сундуки,
+  на Bedrock — нативные формы. Каждый предмет в GUI несёт описание, статистику и подсказку по клику.</p>
+  <ul>
+    <li data-i18n-html="cmd.gui.l1"><b>/меню</b> — один экран: профиль, аукцион, дейлики Ивлии, общий сбор, достижения, сезонный пропуск, косметика, дом/спавн, список команд (админам — свой раздел).</li>
+    <li data-i18n-html="cmd.gui.l2"><b>/профиль</b> — часы, ранг и прогресс до следующего, монеты, косметика, достижения, пропуск, вклады в заказ и сбор, лоты и выплаты аукциона, пинг и первый вход.</li>
+    <li data-i18n-html="cmd.gui.l3"><b>Скорборд справа</b> — логотип сервера в заголовке, онлайн, монеты, часы и ранг, прогресс общего сбора и недельного заказа, счётчик дейликов.</li>
+    <li data-i18n-html="cmd.gui.l4"><b>Таб-лист</b> — тот же логотип в шапке и подвале, онлайн и подсказки команд; игроки отсортированы по рангам.</li>
+    <li data-i18n-html="cmd.gui.l5"><b>Bedrock (Geyser/Floodgate)</b> — меню, профиль, сбор и пропуск открываются формами с вводом суммы; аукцион и доска заказов работают через те же сундуки.</li>
+  </ul>
+
+  <h2><svg class="hico" aria-hidden="true"><use href="#i-compass"/></svg><span data-i18n="cmd.hrs.h">Часы (LoomPlaytimeRanks)</span></h2>
+  <table>
+    <tr><th data-i18n="cmd.th1">Команда</th><th data-i18n="cmd.th3">Описание</th></tr>
+    <tr><td><code>/часы</code></td><td data-i18n-html="cmd.hrs.r1">часы, ранг, прогресс до следующего (алиасы: /hours, /playtime)</td></tr>
+    <tr><td><code>/часы топ</code></td><td data-i18n-html="cmd.hrs.r2">топ-10 по наигранным часам</td></tr>
+  </table>
+
+  <h2><svg class="hico" aria-hidden="true"><use href="#i-scale"/></svg><span data-i18n="cmd.ah.h">Аукцион (LoomAuction) — Постоялец+</span></h2>
+  <table>
+    <tr><th data-i18n="cmd.th1">Команда</th><th data-i18n="cmd.th3">Описание</th></tr>
+    <tr><td><code>/ah</code></td><td data-i18n-html="cmd.ah.r1">витрина аукциона в GUI (алиасы: /аукцион, /auction); ЛКМ — ставка/выкуп</td></tr>
+    <tr><td><code>/ah sell &lt;цена&gt; [выкуп]</code></td><td data-i18n-html="cmd.ah.r2">выставить предмет из руки (до 5 лотов)</td></tr>
+    <tr><td><code>/ah my</code></td><td data-i18n-html="cmd.ah.r3">мои лоты (ПКМ — отмена без ставок)</td></tr>
+    <tr><td><code>/ah claim</code></td><td data-i18n-html="cmd.ah.r4">получить выплаты и купленные предметы</td></tr>
+  </table>
+  <p class="note" data-i18n="cmd.ah.n">Правила: шаг ставки 5% (мин. 5), лот 48 ч, ставка в последние 5 минут продлевает на 5 мин (макс. 3),
+  комиссия победителя 5% (мин. 10), проигравшим мгновенный возврат.</p>
+
+  <h2><svg class="hico" aria-hidden="true"><use href="#i-cal"/></svg><span data-i18n="cmd.ev.h">Ивенты и прогресс (LoomProgress)</span></h2>
+  <table>
+    <tr><th data-i18n="cmd.th1">Команда</th><th data-i18n="cmd.th3">Описание</th></tr>
+    <tr><td><code>/ивент</code></td><td data-i18n-html="cmd.ev.r1">текущий ивент, очки, расписание (алиасы: /events, /ивенты)</td></tr>
+    <tr><td><code>/ачивки</code> <span class="dim">[категория]</span></td><td data-i18n-html="cmd.ev.r2">36 достижений в 10 категориях (алиас: /ach)</td></tr>
+    <tr><td><code>/пропуск</code></td><td data-i18n-html="cmd.ev.r3">сезонный пропуск: дни, награды (алиасы: /pass, /seasonpass)</td></tr>
+    <tr><td><code>/пропуск buy</code></td><td data-i18n-html="cmd.ev.r4">купить донат-ветку (25 000 монет)</td></tr>
+    <tr><td><code>/пропуск claim f15</code></td><td data-i18n-html="cmd.ev.r5">забрать награду 15-го дня</td></tr>
+    <tr><td><code>/ключи</code></td><td data-i18n-html="cmd.ev.r6">косметические ключи (алиас: /keys)</td></tr>
+    <tr><td><code>/ключи open</code> · <code>/ключи wear &lt;имя&gt;</code></td><td data-i18n-html="cmd.ev.r7">открыть ключ · надеть косметику</td></tr>
+    <tr><td><code>/ментор</code></td><td data-i18n-html="cmd.ev.r8">свой код ментора (алиасы: /mentor, /наставник)</td></tr>
+    <tr><td><code>/ментор код &lt;код&gt;</code></td><td data-i18n-html="cmd.ev.r9">ученик подтверждает наставничество</td></tr>
+    <tr><td><code>/слава</code></td><td data-i18n-html="cmd.ev.r10">зал славы: топы по часам, монетам, ачивкам, менторам (алиас: /fame)</td></tr>
+    <tr><td><code>/квартал</code></td><td data-i18n-html="cmd.ev.r11">инфо о торговом квартале (алиас: /quarter)</td></tr>
+    <tr><td><code>/квартал build all</code></td><td data-i18n-html="cmd.ev.r12">админ: построить квартал (нужно quarter.enabled)</td></tr>
+    <tr><td><code>/участок</code></td><td data-i18n-html="cmd.ev.r13">занять участок — Хранитель+, 3000 монет (алиас: /plot)</td></tr>
+  </table>
+
+  <h2><svg class="hico" aria-hidden="true"><use href="#i-users"/></svg><span data-i18n="cmd.fund.h">Общий сбор (LoomProgress)</span></h2>
+  <table>
+    <tr><th data-i18n="cmd.th1">Команда</th><th data-i18n="cmd.th2">Кто</th><th data-i18n="cmd.th3">Описание</th></tr>
+    <tr><td><code>/сбор</code></td><td data-i18n="cmd.all">все</td><td data-i18n-html="cmd.fund.r1">статус: цель, собрано, %, время, ваш вклад</td></tr>
+    <tr><td><code>/сбор вклад &lt;сумма&gt;</code></td><td data-i18n="cmd.all">все</td><td data-i18n-html="cmd.fund.r2">внести монеты (мин. 50)</td></tr>
+    <tr><td><code>/сбор топ</code></td><td data-i18n="cmd.all">все</td><td data-i18n-html="cmd.fund.r3">лидерборд вкладчиков</td></tr>
+    <tr><td><code>/сбор start &lt;цель&gt; [часов]</code></td><td data-i18n="cmd.admin">админ</td><td data-i18n-html="cmd.fund.r4">запуск (boss-bar, вехи 25/50/75%)</td></tr>
+    <tr><td><code>/сбор cancel</code></td><td data-i18n="cmd.admin">админ</td><td data-i18n-html="cmd.fund.r5">отмена с полным возвратом</td></tr>
+  </table>
+  <p class="note" data-i18n-html="cmd.fund.n">Правило «Безубыточного участника»: фонд выплат = <b>120% собранного</b> (20% добавляет казна квартала),
+  каждый участник получает <b>105–150% своего вклада</b>. Недобор ≥50% цели — полный возврат.</p>
+
+  <h2><svg class="hico" aria-hidden="true"><use href="#i-wheat"/></svg><span data-i18n="cmd.tr.h">Дейлики торговца (LoomTrader)</span></h2>
+  <table>
+    <tr><th data-i18n="cmd.th1">Команда</th><th data-i18n="cmd.th3">Описание</th></tr>
+    <tr><td><code>/квесты</code></td><td data-i18n-html="cmd.tr.r1">открыть доску заказов Ивлии в GUI (алиасы: /quests, /дейлики, /dailies)</td></tr>
+    <tr><td><code>/квесты сдать &lt;id&gt;</code></td><td data-i18n-html="cmd.tr.r2">сдать заказ по id (например, /квесты сдать wheat)</td></tr>
+    <tr><td><code>/квесты список</code></td><td data-i18n-html="cmd.tr.r3">доска текстом в чат</td></tr>
+    <tr><td><code>/квесты лог</code></td><td data-i18n-html="cmd.tr.r4">что уже сдано сегодня</td></tr>
+    <tr><td><code>/торговец spawn</code></td><td data-i18n-html="cmd.tr.r5">админ: поставить НПС на своей позиции (или spawn x y z [yaw] [мир])</td></tr>
+    <tr><td><code>/торговец remove</code></td><td data-i18n-html="cmd.tr.r6">админ: убрать НПС</td></tr>
+    <tr><td><code>/торговец реролл</code></td><td data-i18n-html="cmd.tr.r7">админ: перегенерировать доску (10 новых заказов)</td></tr>
+    <tr><td><code>/торговец reload</code></td><td data-i18n-html="cmd.tr.r8">админ: перечитать конфиг</td></tr>
+  </table>
+  <p class="note" data-i18n="cmd.tr.n">Доска обновляется каждый день в 00:00 (10 заказов из пула 59). Каждый заказ — один раз в день,
+  максимум 10 сданных заказов в сутки. Клик по НПС = открыть доску.</p>
+
+  <h2><svg class="hico" aria-hidden="true"><use href="#i-box"/></svg><span data-i18n="cmd.or.h">Недельный заказ (LoomTrader)</span></h2>
+  <table>
+    <tr><th data-i18n="cmd.th1">Команда</th><th data-i18n="cmd.th2">Кто</th><th data-i18n="cmd.th3">Описание</th></tr>
+    <tr><td><code>/заказ</code></td><td data-i18n="cmd.all">все</td><td data-i18n-html="cmd.or.r1">статус: цель, собрано, ваш вклад, ваш %, прогноз выплаты</td></tr>
+    <tr><td><code>/заказ сдать &lt;кол-во|все&gt;</code></td><td data-i18n="cmd.all">все</td><td data-i18n-html="cmd.or.r2">внести предметы из инвентаря</td></tr>
+    <tr><td><code>/заказ топ</code></td><td data-i18n="cmd.all">все</td><td data-i18n-html="cmd.or.r3">топ-10 вкладчиков</td></tr>
+    <tr><td><code>/заказ start &lt;предмет&gt; &lt;цель&gt; &lt;фонд&gt; [дней]</code></td><td data-i18n="cmd.admin">админ</td><td data-i18n-html="cmd.or.r4">свой заказ вместо ротации</td></tr>
+    <tr><td><code>/заказ finish</code></td><td data-i18n="cmd.admin">админ</td><td data-i18n-html="cmd.or.r5">завершить сейчас и раздать фонд по долям</td></tr>
+    <tr><td><code>/заказ cancel</code></td><td data-i18n="cmd.admin">админ</td><td data-i18n-html="cmd.or.r6">отменить без выплат</td></tr>
+  </table>
+  <p class="note" data-i18n-html="cmd.or.n">Ротация по понедельникам: пшеница 2 000 000 (20 000 монет) → морковь 1 500 000 (18 000) →
+  тростник 1 200 000 (18 000) → уголь 500 000 (25 000) → железо 200 000 (30 000).</p>
+
+  <h2><svg class="hico" aria-hidden="true"><use href="#i-shield"/></svg><span data-i18n="cmd.oth.h">Прочее</span></h2>
+  <table>
+    <tr><th data-i18n="cmd.oth.th1">Действие</th><th data-i18n="cmd.th3">Описание</th></tr>
+    <tr><td data-i18n="cmd.oth.r1">Пропуск ночи</td><td data-i18n="cmd.oth.d1">Ветеран (168 ч+) ложится в кровать — утро для всего мира</td></tr>
+    <tr><td data-i18n="cmd.oth.r2">Анти-АФК</td><td data-i18n="cmd.oth.d2">10 мин без движения — без ивентных очков; 6 ч — счётчик часов стоит</td></tr>
+    <tr><td data-i18n="cmd.oth.r3">Ключи за часы</td><td data-i18n="cmd.oth.d3">1 ключ за каждые 20 ч после Легенды (360 ч)</td></tr>
+  </table>
+</main>
+
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <div class="fbrand">
+        <a class="logo" href="index.html"><svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-loom"/></svg>Loom <b>Iven</b></a>
+        <p data-i18n="foot.about">Minecraft-сервер Java + Bedrock: монеты, прогресс и общий труд.</p>
+      </div>
+      <div>
+        <div class="fhead" data-i18n="foot.pages">Страницы</div>
+        <a href="index.html" data-i18n="nav.home">Главная</a>
+        <a href="mechanics.html" data-i18n="nav.mechanics">Механики</a>
+        <a href="quests.html" data-i18n="nav.quests">Квесты и заказы</a>
+        <a href="commands.html" data-i18n="nav.commands">Команды</a>
+        <a href="profile.html" data-i18n="nav.profile">Профиль</a>
+      </div>
+      <div>
+        <div class="fhead" data-i18n="foot.docs">Документы</div>
+        <a href="terms.html" data-i18n="foot.terms">Условия использования</a>
+        <a href="privacy.html" data-i18n="foot.privacy">Конфиденциальность</a>
+        <a href="offer.html" data-i18n="foot.offer">Договор оферты</a>
+      </div>
+      <div>
+        <div class="fhead" data-i18n="foot.community">Сообщество</div>
+        <a class="fsoc" href="https://discord.gg/2cuM7kpR" target="_blank" rel="noopener"><svg class="mico" aria-hidden="true"><use href="#i-dc"/></svg>Discord</a>
+        <a class="fsoc" href="https://t.me/SYNAPSE_of" target="_blank" rel="noopener"><svg class="mico" aria-hidden="true"><use href="#i-tg"/></svg>Telegram</a>
+      </div>
+    </div>
+    <div class="fbase">
+      <span data-i18n="foot.copy">© 2026 Loom Iven. Проект не связан с Mojang и Microsoft.</span>
+      <span class="creator" data-i18n-html="foot.creator">Сайт собрал <a href="https://t.me/SYNAPSE_of" target="_blank" rel="noopener">SYNAPSE</a> · <a href="https://discord.gg/2cuM7kpR" target="_blank" rel="noopener">Discord</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
